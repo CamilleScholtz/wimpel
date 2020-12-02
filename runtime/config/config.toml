@@ -1,0 +1,8 @@
+# URL & port to listen to.
+Listen = "vlagenwimpel.com:1337"
+
+# Mail configuration.
+MailHost = "pro2.mail.ovh.net"
+MailPort = 587
+MailUser = "contact@vlagenwimpel.com"
+MailPass = "secret"

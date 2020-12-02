@@ -1,0 +1,8 @@
+github.com/BurntSushi/toml v0.3.1 h1:WXkYYl6Yr3qBf1K79EBnL4mak0OimBfB0XUf9Vl28OQ=
+github.com/BurntSushi/toml v0.3.1/go.mod h1:xHWCNGjB5oqiDr8zfno3MHue2Ht5sIBksp03qcyfWMU=
+github.com/mohamedattahri/mail v0.0.0-20150907213728-52bc9c59063f h1:eUB6ohYEAv7lbqKAMQXBfPfRxhvOUUQIrHYrs/+1UQs=
+github.com/mohamedattahri/mail v0.0.0-20150907213728-52bc9c59063f/go.mod h1:lB0PjFC/A+yHl9ZdreyVugcdsF9KkK3JOHebiPhU1F8=
+github.com/versine/loginauth v0.0.0-20170330164406-8380ec243689 h1:WKEz37nR/oSz1vYy22iuuzRPoDTPvKvcTpRW4+WzSXg=
+github.com/versine/loginauth v0.0.0-20170330164406-8380ec243689/go.mod h1:eDRsHVy7Ek36vjNTBRtxR7/TxWq8YkHKp1LHU/UINiM=
+gopkg.in/alexcesaro/quotedprintable.v3 v3.0.0-20150716171945-2caba252f4dc h1:2gGKlE2+asNV9m7xrywl36YYNnBG5ZQ0r/BOOxqPpmk=
+gopkg.in/alexcesaro/quotedprintable.v3 v3.0.0-20150716171945-2caba252f4dc/go.mod h1:m7x9LTH6d71AHyAX77c9yqWCCa3UKHcVEj9y7hAtKDk=
