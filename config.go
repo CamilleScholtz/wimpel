@@ -11,6 +11,8 @@ import (
 type config struct {
 	Listen string
 
+	ReCAPTCHAKey string
+
 	MailHost string
 	MailPort int
 	MailUser string

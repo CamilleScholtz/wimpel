@@ -6,3 +6,5 @@ github.com/versine/loginauth v0.0.0-20170330164406-8380ec243689 h1:WKEz37nR/oSz1
 github.com/versine/loginauth v0.0.0-20170330164406-8380ec243689/go.mod h1:eDRsHVy7Ek36vjNTBRtxR7/TxWq8YkHKp1LHU/UINiM=
 gopkg.in/alexcesaro/quotedprintable.v3 v3.0.0-20150716171945-2caba252f4dc h1:2gGKlE2+asNV9m7xrywl36YYNnBG5ZQ0r/BOOxqPpmk=
 gopkg.in/alexcesaro/quotedprintable.v3 v3.0.0-20150716171945-2caba252f4dc/go.mod h1:m7x9LTH6d71AHyAX77c9yqWCCa3UKHcVEj9y7hAtKDk=
+gopkg.in/ezzarghili/recaptcha-go.v4 v4.3.0 h1:85T5ZYeVUgkfHBQqlMxlW1pzrBIta9K26ykU3N1vISs=
+gopkg.in/ezzarghili/recaptcha-go.v4 v4.3.0/go.mod h1:mIOiLZufgLoZcJqbqyYWb3r3dA2huwHZP2uM3RhxjoU=

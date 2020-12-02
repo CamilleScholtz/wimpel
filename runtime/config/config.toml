@@ -1,6 +1,9 @@
 # URL & port to listen to.
 Listen = "vlagenwimpel.com:1337"
 
+# ReCaptcha key.
+ReCAPTCHAKey = "secret"
+
 # Mail configuration.
 MailHost = "pro2.mail.ovh.net"
 MailPort = 587

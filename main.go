@@ -8,9 +8,11 @@ import (
 	"regexp"
 	"strconv"
 	"strings"
+	"time"
 
 	"github.com/mohamedattahri/mail"
 	"github.com/versine/loginauth"
+	"gopkg.in/ezzarghili/recaptcha-go.v4"
 )
 
 type handler struct {
@@ -71,6 +73,17 @@ func main() {
 
 		if err = r.ParseForm(); err != nil {
 			http.Error(w, err.Error(), 500)
+			return
+		}
+
+		rc, err := recaptcha.NewReCAPTCHA(c.ReCAPTCHAKey, recaptcha.V3, 10*time.
+			Second)
+		if err != nil {
+			http.Error(w, err.Error(), 500)
+			return
+		}
+		if err := rc.Verify(r.Form.Get("token")); err != nil {
+			http.Error(w, err.Error(), 429)
 			return
 		}
 
