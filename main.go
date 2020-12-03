@@ -5,7 +5,6 @@ import (
 	"log"
 	"net/http"
 	"net/smtp"
-	"regexp"
 	"strconv"
 	"strings"
 	"time"
@@ -25,7 +24,7 @@ func (h *handler) formatForm(w http.ResponseWriter, r *http.Request) error {
 		r.Form.Get("tussenvoegsels"),
 		r.Form.Get("achternaam"),
 	}, " ")
-	regexp.MustCompile(`\s+`).ReplaceAllString(n, " ")
+	n = strings.TrimSpace(strings.Replace(n, "  ", " ", -1))
 	r.Form.Set("naam", n)
 
 	return nil
@@ -35,7 +34,7 @@ func (h *handler) mailForm(w http.ResponseWriter, r *http.Request) error {
 	msg := mail.NewMessage()
 
 	msg.SetFrom(&mail.Address{"Vlag & Wimpel", "contact@vlagenwimpel.com"})
-	msg.SetSubject("Aanmelding lidmaatschap `" + r.Form.Get("naam") + "`")
+	msg.SetSubject("Aanmelding " + r.Form.Get("naam"))
 	msg.SetContentType("text/plain")
 
 	fl := []string{
@@ -76,13 +75,13 @@ func main() {
 			return
 		}
 
-		rc, err := recaptcha.NewReCAPTCHA(c.ReCAPTCHAKey, recaptcha.V3, 10*time.
+		rc, err := recaptcha.NewReCAPTCHA(c.ReCAPTCHAKey, recaptcha.V2, 10*time.
 			Second)
 		if err != nil {
 			http.Error(w, err.Error(), 500)
 			return
 		}
-		if err := rc.Verify(r.Form.Get("token")); err != nil {
+		if err := rc.Verify(r.Form.Get("g-recaptcha-response")); err != nil {
 			http.Error(w, err.Error(), 429)
 			return
 		}
@@ -97,7 +96,7 @@ func main() {
 			return
 		}
 
-		http.Redirect(w, r, "/", 301)
+		http.Redirect(w, r, "/steun/verzonden", 301)
 	})
 	if err := http.ListenAndServe(c.Listen, nil); err != nil {
 		log.Fatalln(err)
